@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200&family=Montserrat:wght@500;700&family=Nunito+Sans&display=swap');
+$bgColor:#131722;
+$lightBgColor:#24baef;
+$bgTransparent:rgba(36,186,239,.6) ;
+$fontColor:#fff;
+
+$secondFontColor:#949cb0;
+
+body{
+  background-color: $bgColor;
+  color: $fontColor;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.form-control:focus{
+  border-color: rgb(253, 73, 73);
+  box-shadow: 0 0 0 0.25rem rgba(253, 73, 73, 0.575);
+}

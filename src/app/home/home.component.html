@@ -1,0 +1,35 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="my-5">
+        <div class="w-25 line"></div>
+        <h1 class="my-3">Trending <br>Movies<br>To Watch Now</h1>
+        <div class="w-100 line"></div>
+      </div>
+    </div>
+    <div class="col-md-2" *ngFor="let movie of trendingMovies">
+      <div class="p-2">
+        <img [src]="imagePath+movie.poster_path" alt="" class="img-fluid">
+        <h5 class="text-center my-2">{{movie.original_title}}</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="my-5">
+        <div class="w-25 line"></div>
+        <h1 class="my-3">Trending <br>Tv<br>To Watch Now</h1>
+        <div class="w-100 line"></div>
+      </div>
+    </div>
+    <div class="col-md-2" *ngFor="let tv of trendingTv">
+      <div class="p-2">
+        <img [src]="imagePath+tv.poster_path" alt="" class="img-fluid">
+        <h5 class="text-center my-2">{{tv.original_name}}</h5>
+      </div>
+    </div>
+  </div>
+</div>
