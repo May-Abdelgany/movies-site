@@ -13,8 +13,11 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { FormControl,FormGroup, ReactiveFormsModule , Validator} from '@angular/forms';
-import {HttpClient, HttpClientModule} from '@angular/common/http'
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validator } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { SearchMoviePipe } from './search-movie.pipe';
+import { SearchTvPipe } from './search-tv.pipe'
 
 
 @NgModule({
@@ -30,13 +33,17 @@ import {HttpClient, HttpClientModule} from '@angular/common/http'
     RegisterComponent,
     NavbarComponent,
     NotFoundComponent,
+    MovieDetailsComponent,
+    SearchMoviePipe,
+    SearchTvPipe,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

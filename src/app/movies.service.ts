@@ -8,7 +8,6 @@ import { Injectable } from '@angular/core';
 export class MoviesService {
 
   constructor(private _HttpClient: HttpClient) { }
-
   getTrendingMovie(): Observable<any> {
 
     return this._HttpClient.get('https://api.themoviedb.org/3/trending/movie/week?api_key=866cd3a065ef9304a549f1d65e494940');
@@ -16,5 +15,12 @@ export class MoviesService {
   getTrendingTv(): Observable<any> {
 
     return this._HttpClient.get('https://api.themoviedb.org/3/trending/tv/week?api_key=866cd3a065ef9304a549f1d65e494940');
+  }
+
+  getDetailsMovie(id:any):Observable<any>{
+    return this._HttpClient.get(`https://api.themoviedb.org/3/movie/${id}?api_key=866cd3a065ef9304a549f1d65e494940&language=en-US`)
+  }
+  getDetailsTv(id:any):Observable<any>{
+    return this._HttpClient.get(`https://api.themoviedb.org/3/tv/${id}?api_key=866cd3a065ef9304a549f1d65e494940&language=en-US`)
   }
 }

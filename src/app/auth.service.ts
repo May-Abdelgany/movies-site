@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -9,7 +10,7 @@ import jwt_decode from 'jwt-decode';
 export class AuthService {
 
   decodeToken: any = new BehaviorSubject(null);
-  constructor(public _HttpClient: HttpClient) {
+  constructor(public _HttpClient: HttpClient,private _Router:Router) {
 
     if (localStorage.getItem('userToken') != null) {
       this.saveToken();

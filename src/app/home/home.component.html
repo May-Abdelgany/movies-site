@@ -1,5 +1,12 @@
 <div class="container mt-3">
   <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="py-5">
+        <input class="form-control" type="text" placeholder="search" [(ngModel)]="word">
+      </div>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-md-4">
       <div class="my-5">
         <div class="w-25 line"></div>
@@ -7,9 +14,9 @@
         <div class="w-100 line"></div>
       </div>
     </div>
-    <div class="col-md-2" *ngFor="let movie of trendingMovies">
+    <div class="col-md-2" *ngFor="let movie of trendingMovies|searchMovie:word">
       <div class="p-2">
-        <img [src]="imagePath+movie.poster_path" alt="" class="img-fluid">
+        <img [routerLink]="['/movieDetails',movie.id]" [src]="imagePath+movie.poster_path" alt="" class="img-fluid">
         <h5 class="text-center my-2">{{movie.original_title}}</h5>
       </div>
     </div>
@@ -25,9 +32,9 @@
         <div class="w-100 line"></div>
       </div>
     </div>
-    <div class="col-md-2" *ngFor="let tv of trendingTv">
+    <div class="col-md-2" *ngFor="let tv of trendingTv |searchTv:word  ">
       <div class="p-2">
-        <img [src]="imagePath+tv.poster_path" alt="" class="img-fluid">
+        <img [routerLink]="['/movieDetails',tv.id]" [src]="imagePath+tv.poster_path" alt="" class="img-fluid">
         <h5 class="text-center my-2">{{tv.original_name}}</h5>
       </div>
     </div>

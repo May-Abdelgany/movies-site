@@ -1,0 +1,26 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+        <div class="p-5">
+          <img [src]="imagePath+details.poster_path" class="img-fluid">
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="p-5">
+          <h2 class="py-2 fw-bolder" *ngIf="details.original_title">{{details.original_title}}</h2>
+          <h2 class="py-2 fw-bolder" *ngIf="details.original_name">{{details.original_name}}</h2>
+          <p class="fs-5 fw-bold text-muted pb-3">{{details.overview}}</p>
+          <div>
+            <span class="bg-success p-2 rounded-2 me-3"  *ngFor="let genre of genres">{{genre.name}}</span>
+          </div>
+          <p class="pt-5 fs-5 fw-bold">vote: {{details.vote_average}}</p>
+          <p class=" fs-5 fw-bold">vote_count: {{details.vote_count}}</p>
+          <p class=" fs-5 fw-bold">popularity: {{details.popularity}}</p>
+          <p class=" fs-5 fw-bold" *ngIf="details.release_date">release_date: {{details.release_date}}</p>
+          <p class=" fs-5 fw-bold" *ngIf="details.last_air_date">last_air_date: {{details.last_air_date}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

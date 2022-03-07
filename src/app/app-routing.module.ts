@@ -1,3 +1,4 @@
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RegisterComponent } from './register/register.component';
@@ -12,13 +13,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'register', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', canActivate: [AuthGuard], component: HomeComponent },
   { path: 'about', canActivate: [AuthGuard], component: AboutComponent },
   { path: 'tv', canActivate: [AuthGuard], component: TvComponent },
   { path: 'people', canActivate: [AuthGuard], component: PeopleComponent },
   { path: 'networks', canActivate: [AuthGuard], component: NetworksComponent },
   { path: 'movies', canActivate: [AuthGuard], component: MoviesComponent },
+  { path: 'movieDetails/:id', canActivate: [AuthGuard], component: MovieDetailsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: '**', component: NotFoundComponent }
